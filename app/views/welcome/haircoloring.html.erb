@@ -1,0 +1,461 @@
+<section id="content" class="gallery">
+  <div class="container" style="background: url(<%= image_url 'box40.png' %>)">
+    <div class="row" align="center" style="margin-bottom: 20px;">
+		
+		<div class="grid_12">
+			<h2 style="font-size: 2em;">Окрашивание волос</h2>
+		</div>
+		
+		<select name="cut_type" name="Dest" aria-required="true" onChange="SelectedHaircoloring(this)">
+			<option value="0" selected="selected">Мастер салона Сафари</option>
+			<option value="1">Директор салона Сафари</option>
+		</select>
+		
+		<br clear="all"<br><br>
+      
+		<table id="mastersHaircoloring">
+			<tr>
+				<th>Наименование услуги</th>
+				<th>Время</th>
+				<th>Цена(руб.)</th>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Окрашивание одним цветом</strong></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">Окрашивание корней (30-50 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>1,5 часа</td>
+				<td>650-950</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>1,5 часа</td>
+				<td>1000-1400</td>
+			</tr>
+			<tr>
+				<td colspan="3">Окрашивание волос (до 25 см, 30-40 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>1,5 часа</td>
+				<td>700-1050</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>1,5 часа</td>
+				<td>1000-1550</td>
+			</tr>
+			<tr>
+				<td colspan="3">Окрашивание волос (25-40 см, 40-60 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>2 часа</td>
+				<td>850-1250</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>2 часа</td>
+				<td>1500-1900</td>
+			</tr>
+			<tr>
+				<td colspan="3">Окрашивание волос (свыше 40 см, 60-90 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>2,5 часа</td>
+				<td>1000-1400</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>2,5 часа</td>
+				<td>1600-2250</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Простое колорирование</strong></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">Простое колорирование (до 25 см, 30-40 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>1,5 часа</td>
+				<td>800-1100</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>1,5 часа</td>
+				<td>1100-1600</td>
+			</tr>
+			<tr>
+				<td colspan="3">Простое колорирование (25-40 см, 50-80 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>2 часа</td>
+				<td>1000-1350</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>2 часа</td>
+				<td>1600-2050</td>
+			</tr>
+			<tr>
+				<td colspan="3">Простое колорирование (свыше 40 см, 60-90 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>2,5 часа</td>
+				<td>1200-1550</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>2,5 часа</td>
+				<td>1900-2350</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Колорирование, экспертное окрашивание</strong></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">Колорирование, экспертное <br> окрашивание(до 25 см, 40-60 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>1,5 часа</td>
+				<td>900-1200</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>1,5 часа</td>
+				<td>1300-1700</td>
+			</tr>
+			<tr>
+				<td colspan="3">Колорирование, экспертное <br> окрашивание(25-40 см, 50-70 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>2 часа</td>
+				<td>1100-1350</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>2 часа</td>
+				<td>1550-2000</td>
+			</tr>
+			<tr>
+				<td colspan="3">Колорирование, экспертное <br> окрашивание(свыше 40 см, 70-100 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>2,5 часа</td>
+				<td>1300-1700</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>2,5 часа</td>
+				<td>2000-2600</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Мелирование волос</strong></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">Мелирование волос (до 25 см, 30-40 г)</td>
+			</tr>
+			<tr>
+				<td>«Indola»</td>
+				<td>1,5 часа</td>
+				<td>700-850</td>
+			</tr>
+			<tr>
+				<td>«Wella» пудра</td>
+				<td>1,5 часа</td>
+				<td>800-950</td>
+			</tr>
+			<tr>
+				<td>«Wella» крем-блондор</td>
+				<td>1,5 часа</td>
+				<td>850-1000</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">Мелирование волос (25-40 см, 40-60 г)</td>
+			</tr>
+			<tr>
+				<td>«Indola»</td>
+				<td>2 часа</td>
+				<td>800-950</td>
+			</tr>
+			<tr>
+				<td>«Wella» пудра</td>
+				<td>2 часа</td>
+				<td>950-1100</td>
+			</tr>
+			<tr>
+				<td>«Wella» крем-блондор</td>
+				<td>2 часа</td>
+				<td>950-1200</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">Мелирование волос (свыше 40 см, 50-70 г)</td>
+			</tr>
+			<tr>
+				<td>«Indola»</td>
+				<td>2,5 часа</td>
+				<td>850-1050</td>
+			</tr>
+			<tr>
+				<td>«Wella» пудра</td>
+				<td>2,5 часа</td>
+				<td>1000-1250</td>
+			</tr>
+			<tr>
+				<td>«Wella» крем-блондор</td>
+				<td>2,5 часа</td>
+				<td>1100-1400</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Депигментирование (деколорант, <br>кислотная смывка краски с волос)</strong></td>
+			</tr>
+			<tr>
+				<td>Короткие волосы</td>
+				<td>1 час</td>
+				<td>500-550</td>
+			</tr>
+			<tr>
+				<td>Удлинённые волосы</td>
+				<td>1,5 часа</td>
+				<td>600-700</td>
+			</tr>
+			<tr>
+				<td>Длинные волосы</td>
+				<td>2 часа</td>
+				<td>650-850</td>
+			</tr>
+		</table>
+		
+		<table id="directorHaircoloring" style="display: none">
+			<tr>
+				<th>Наименование услуги</th>
+				<th>Время</th>
+				<th>Цена(руб.)</th>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Окрашивание одним цветом</strong></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">Окрашивание корней (30-50 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>1,5 часа</td>
+				<td>1300</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>1,5 часа</td>
+				<td>1700</td>
+			</tr>
+			<tr>
+				<td colspan="3">Окрашивание волос (до 25 см, 30-40 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>1,5 часа</td>
+				<td>1300</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>1,5 часа</td>
+				<td>1700</td>
+			</tr>
+			<tr>
+				<td colspan="3">Окрашивание волос (25-40 см, 40-60 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>2 часа</td>
+				<td>1600</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>2 часа</td>
+				<td>2100</td>
+			</tr>
+			<tr>
+				<td colspan="3">Окрашивание волос (свыше 40 см, 60-90 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>2,5 часа</td>
+				<td>2000</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>2,5 часа</td>
+				<td>2800</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Простое колорирование</strong></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">Простое колорирование (до 25 см, 30-40 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>1,5 часа</td>
+				<td>1500</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>1,5 часа</td>
+				<td>1900</td>
+			</tr>
+			<tr>
+				<td colspan="3">Простое колорирование (25-40 см, 50-80 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>2 часа</td>
+				<td>1900</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>2 часа</td>
+				<td>2600</td>
+			</tr>
+			<tr>
+				<td colspan="3">Простое колорирование (свыше 40 см, 60-90 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>2,5 часа</td>
+				<td>2000</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>2,5 часа</td>
+				<td>2700</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Колорирование, экспертное окрашивание</strong></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">Колорирование, экспертное <br> окрашивание(до 25 см, 40-60 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>1,5 часа</td>
+				<td>1800</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>1,5 часа</td>
+				<td>2400</td>
+			</tr>
+			<tr>
+				<td colspan="3">Колорирование, экспертное <br> окрашивание(25-40 см, 50-70 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>2 часа</td>
+				<td>2000</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>2 часа</td>
+				<td>2700</td>
+			</tr>
+			<tr>
+				<td colspan="3">Колорирование, экспертное <br> окрашивание(свыше 40 см, 70-100 г)</td>
+			</tr>
+			<tr>
+				<td>«Igora»</td>
+				<td>2,5 часа</td>
+				<td>2400</td>
+			</tr>
+			<tr>
+				<td>«Wella»</td>
+				<td>2,5 часа</td>
+				<td>3400</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Мелирование волос</strong></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">Мелирование волос (до 25 см, 30-40 г)</td>
+			</tr>
+			<tr>
+				<td>«Indola»</td>
+				<td>1,5 часа</td>
+				<td>1400</td>
+			</tr>
+			<tr>
+				<td>«Wella» пудра</td>
+				<td>1,5 часа</td>
+				<td>1500</td>
+			</tr>
+			<tr>
+				<td>«Wella» крем-блондор</td>
+				<td>1,5 часа</td>
+				<td>1600</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">Мелирование волос (25-40 см, 40-60 г)</td>
+			</tr>
+			<tr>
+				<td>«Indola»</td>
+				<td>2 часа</td>
+				<td>1500</td>
+			</tr>
+			<tr>
+				<td>«Wella» пудра</td>
+				<td>2 часа</td>
+				<td>1700</td>
+			</tr>
+			<tr>
+				<td>«Wella» крем-блондор</td>
+				<td>2 часа</td>
+				<td>1800</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">Мелирование волос (свыше 40 см, 50-70 г)</td>
+			</tr>
+			<tr>
+				<td>«Indola»</td>
+				<td>2,5 часа</td>
+				<td>1700</td>
+			</tr>
+			<tr>
+				<td>«Wella» пудра</td>
+				<td>2,5 часа</td>
+				<td>1900</td>
+			</tr>
+			<tr>
+				<td>«Wella» крем-блондор</td>
+				<td>2,5 часа</td>
+				<td>2100</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Депигментирование (деколорант, <br>кислотная смывка краски с волос)</strong></td>
+			</tr>
+			<tr>
+				<td>Короткие волосы</td>
+				<td>1 час</td>
+				<td>800</td>
+			</tr>
+			<tr>
+				<td>Удлинённые волосы</td>
+				<td>1,5 часа</td>
+				<td>900</td>
+			</tr>
+			<tr>
+				<td>Длинные волосы</td>
+				<td>2 часа</td>
+				<td>1000</td>
+			</tr>
+		</table>
+    </div>
+  </div>
+</section>

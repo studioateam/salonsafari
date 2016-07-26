@@ -1,0 +1,29 @@
+<section id="content">
+  <div class="container" style="background: url(<%= image_url 'box50.png' %>)">
+	<div class="row"  style="margin-left: 20px;">
+		<div class="grid_9">
+			<h3 style="font-size: 2em;" align="center">Введите логин и пароль, выданный Вам администратором</h3>
+			<% if flash[:alert] %>
+				<p><%= flash[:alert] %></p>
+			<% end %>
+			<%= form_tag login_path, :id => 'contact-form' do %>
+				<fieldset>
+					<div>
+						<%= label_tag :name, 'Имя:' %>
+						<%= text_field_tag :name, params[:name] %>
+					</div>
+			
+					<div>
+						<%= label_tag :password, 'Пароль:' %>
+						<%= password_field_tag :password, params[:password] %>
+					</div>
+			
+					<div>
+						<%= submit_tag "Войти", :class => 'btn' %>
+					</div>
+				</fieldset>
+			<% end %>
+		</div>
+	</div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<%= form_for(@photo, html: { multipart: true, :id => "contact-form" }) do |f| %>
+  <% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+      <ul>
+      <% @photo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :'Название' %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :'Описание' %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :'Изображение (можно выбрать несколько)' %><br>
+    <%= file_field_tag 'files[]', :multiple => true %>
+  </div>
+  <div class="field">
+    <%= f.label :'Обложка для папки (допускается загрузка ТОЛЬКО изображений с размером 600х450 )' %><br>
+    <%= f.file_field :cover %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Отправить', :class => 'btn' %>
+  </div>
+<% end %>

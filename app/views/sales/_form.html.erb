@@ -1,0 +1,25 @@
+<%= form_for @sale, :html => { :id => "contact-form"} do |f| %>
+  <% if @sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+      <ul>
+      <% @sale.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :'Заголовок' %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :'Описание' %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Отправить', :class => 'btn' %>
+  </div>
+<% end %>

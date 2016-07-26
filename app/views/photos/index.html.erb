@@ -1,0 +1,53 @@
+<% if session[:user_id] %>
+	<section id="content">
+	  <div class="container" style="background: url(<%= image_url 'box40.png' %>)">
+	    <div class="row" style="margin-left: 20px; margin-bottom: 20px;">
+		<h3 style="font-size: 2em;" align="center">Фотогалерея</h3>
+		<table>
+		  <thead>
+		    <tr>
+		      <th>Название папки</th>
+		      <th>Описание</th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <% @photos.each do |photo| %>
+		      <tr>
+			<td><%= photo.name %></td>
+			<td><%= photo.description %></td>
+			<td><%= link_to 'Удалить', photo, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить эту запись?' } %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+
+		<br>
+
+		<a href="<%= new_photo_path %>" class="btn">Добавить новую папку</a>
+	    </div>
+	  </div>
+	</section>
+<% else %>
+	<section id="content" class="gallery">
+	  <div class="container">
+	    <div class="row">
+	      <div class="grid_12">
+		<h2 style="font-size: 2em;">Фотогалерея</h2>
+	      </div>
+	      <% @photos.each do |photo| %>
+		      <div class="grid_4">
+			<div class="box">
+			  <%= link_to image_tag(photo.cover), photo %>
+			  <div class="box_bot">
+			    <div class="box_bot_title"><%= photo.name %></div>
+					<p><%= photo.description %></p>
+			    <%= link_to 'Открыть', photo, :class => "btn" %>
+			  </div>
+			</div>
+	      	     </div>
+	     <% end %>
+	    </div>
+	  </div>
+	</section>
+<% end %>

@@ -1,0 +1,48 @@
+<!--<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @photo.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @photo.description %>
+</p>
+
+<p>
+  <strong>Image paths:</strong>
+  <%= @photo.image_paths %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>-->
+
+<% photos_in_folder = @photo.image_paths.split(';') %>
+
+<section id="content" class="gallery">
+  <div class="container">
+    <div class="row" align="center">
+      <div class="grid_12">
+        <h3 style="font-size: 2em;" align="center"><%= @photo.name %></h3>
+      </div>
+      <div class="grid_4">
+		<div class="galleria">
+			<% photos_in_folder.each do |photo| %>
+			    <img src="<%= image_url photo %>">
+			<% end %>
+		</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--<div class="galleria">
+    <img src="<%= image_url 'safari.jpg' %>">
+    <img src="<%= image_url 'sale.png' %>">
+    <img src="<%= image_url 'slider.jpg' %>">
+</div>-->
+<script>
+	    Galleria.loadTheme("<%= javascript_path('galleria.classic.js') %>");
+            Galleria.run('.galleria').enterFullscreen();;
+</script>
