@@ -9,6 +9,8 @@
 		      <th>Название папки</th>
 		      <th>Описание</th>
 		      <th></th>
+		      <th></th>
+		      <th></th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -16,6 +18,8 @@
 		      <tr>
 			<td><%= photo.name %></td>
 			<td><%= photo.description %></td>
+		        <td><%= link_to 'Добавить фото', add_photo_to_folder_path(photo.id) %></td>
+			<td><%= link_to 'Удалить фото из папки', delete_photo_from_folder_path(photo.id) %></td>
 			<td><%= link_to 'Удалить', photo, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить эту запись?' } %></td>
 		      </tr>
 		    <% end %>
@@ -38,7 +42,7 @@
 	      <% @photos.each do |photo| %>
 		      <div class="grid_4">
 			<div class="box">
-			  <%= link_to image_tag(photo.cover), photo %>
+			  <%= link_to image_tag(photo.name + "/" + photo.cover), photo %>
 			  <div class="box_bot">
 			    <div class="box_bot_title"><%= photo.name %></div>
 					<p><%= photo.description %></p>

@@ -1,0 +1,31 @@
+<section id="content">
+	<div class="container" style="background: url(<%= image_url 'box40.png' %>)">
+		<div class="row" style="margin-left: 20px; margin-bottom: 20px;" align="center">
+			<h3 style="font-size: 2em;" align="center">Добавление фотографий к папке</h3>
+			
+			<% @list_of_photo %>
+			<table align="center">
+			  <thead>
+			    <tr>
+			      <th></th>
+			      <th></th>
+			      <th></th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <% i = 0 %>
+			    <% @list_of_photo.each do |photo| %>
+			      <tr>
+				<td><img src="<%= image_url(@photo_name + '/' +  photo) %>" alt="" width="200" height="200"></td>
+				<td><%= photo %></td>
+				<td><%= link_to 'Удалить фото', delete_photo_from_folder_post_path(i), :class => "btn" %></td>
+			      </tr>
+			      <% i = i + 1 %>
+			    <% end %>
+			  </tbody>
+			</table>
+			<br>
+			
+		</div>
+	</div>
+</section>

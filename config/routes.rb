@@ -1,5 +1,10 @@
 Salonsafari::Application.routes.draw do
   resources :photos
+  get 'add_photo_to_folder' => 'photos#add_photo_to_folder'
+  post 'add_photo_to_folder_post' => 'photos#add_photo_to_folder_post'
+
+  get 'delete_photo_from_folder' => 'photos#delete_photo_from_folder'
+  get 'delete_photo_from_folder_post' => 'photos#delete_photo_from_folder_post'
 
   get "welcome/index"
   get "about" => "welcome/about"

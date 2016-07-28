@@ -4,4 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   @users = User.all
+
+  Dir.glob("#{Rails.root}/app/assets/images/**/").each do |path|
+    Rails.application.config.assets.paths << path
+  end
+
 end

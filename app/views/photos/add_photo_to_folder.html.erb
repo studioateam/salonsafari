@@ -1,0 +1,18 @@
+<section id="content">
+	<div class="container" style="background: url(<%= image_url 'box40.png' %>)">
+		<div class="row" style="margin-left: 20px; margin-bottom: 20px;">
+			<h3 style="font-size: 2em;" align="center">Добавление фотографий к папке <%= @records %></h3>
+			
+			<%= form_for(@photo, :url => add_photo_to_folder_post_path, html: { multipart: true, :id => "contact-form" }) do |f| %>
+			  <div class="field">
+			    <%= f.label :'Изображение (можно выбрать несколько)' %><br>
+			    <%= file_field_tag 'files[]', :multiple => true %>
+			  </div>
+			  <div class="actions">
+			    <%= f.submit 'Отправить', :class => 'btn' %>
+			  </div>
+			<% end %>
+			
+		</div>
+	</div>
+</section>

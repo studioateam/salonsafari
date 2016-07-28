@@ -51,7 +51,7 @@ class NewsController < ApplicationController
 
     uploaded_file = @news.image_path
 
-    filename = SecureRandom.hex + "_" + @news.image_path.original_filename
+    filename = @news.image_path.original_filename
     @news.image_path = filename
 
     content_type = uploaded_file.content_type

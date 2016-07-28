@@ -38,11 +38,11 @@
 	      <div class="grid_7">
 		<h3 style="font-size: 2em;" align="center">Вакансии</h3>
 		<% @vacancies.each do |vacancy| %>
-			<time class="time-1"><%= vacancy.title %></time><br clear="all"><p class="offset__2" style="font-size: 1.5em;"><%= vacancy.description %></p>
+			<time class="time-1"><%= vacancy.title %></time><br clear="all"><p class="offset__2" style="font-size: 1.4em;"><%= vacancy.description %></p>
 			<br clear="all">
 		<% end %>
 		<% if @vacancies.count == 0 %>
-			<time class="time-1">К сожалению, новых вакансий нет.</time><br clear="all"><p class="offset__2">Но вы можете позвонить нам по телефону и узнать подробнее, быть может именно Вы нас заинтересуете ;)</p>
+			<time class="time-1">К сожалению, новых вакансий нет.</time><br clear="all"><p class="offset__2" style="font-size: 1.4em;">Но вы можете позвонить нам по телефону и узнать подробнее, быть может именно Вы нас заинтересуете ;)</p>
 		<% end %>
 	      </div>
 	      <div class="grid_4">
