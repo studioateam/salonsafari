@@ -5,15 +5,22 @@
 		<div class="grid_12">
 			<h2 style="font-size: 2em;">Укладка волос</h2>
 		</div>
+		
+		<select name="style_type" aria-required="true" onChange="SelectedHairstyling(this)">
+			<option value="0" selected="selected">Мастер салона Сафари</option>
+			<option value="1">Директор салона Сафари</option>
+		</select>
+		
+		<br clear="all"<br><br>
       
-		<table>
+		<table id="mastersHairstyling">
 			<tr>
 				<th>Наименование услуги</th>
 				<th>Время</th>
 				<th>Цена(руб.)</th>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Сушка феном после окраски и других процедур</td>
+				<td colspan="3" align="center"><strong>Сушка феном после окраски и других процедур</strong></td>
 			</tr>
 			<tr>
 				<td>Короткие волосы</td>
@@ -22,16 +29,22 @@
 			</tr>
 			<tr>
 				<td>Удлинённые волосы</td>
-				<td>10 мин</td>
+				<td>15 мин</td>
 				<td>200</td>
 			</tr>
 			<tr>
 				<td>Длинные волосы</td>
-				<td>10 мин</td>
+				<td>20 мин</td>
 				<td>250</td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Укладка феном с препаратами</td>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Укладка феном с препаратами</strong></td>
 			</tr>
 			<tr>
 				<td>Короткие волосы</td>
@@ -49,7 +62,13 @@
 				<td>450-550</td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Локоны (щипцы, утюги или бигуди)</td>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Локоны (щипцы, утюги или бигуди)</strong></td>
 			</tr>
 			<tr>
 				<td>Короткие волосы</td>
@@ -67,7 +86,13 @@
 				<td>600</td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Прическа праздничная</td>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Прическа праздничная</strong></td>
 			</tr>
 			<tr>
 				<td>Удлинённые волосы</td>
@@ -85,7 +110,13 @@
 				<td>1500</td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Плетение кос</td>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Плетение кос</strong></td>
 			</tr>
 			<tr>
 				<td>1 сложности</td>
@@ -111,6 +142,9 @@
 				<td colspan="3" align="center"></td>
 			</tr>
 			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
 				<td colspan="3" align="center"><strong>Украшения для волос</strong></td>
 			</tr>
 			<tr>
@@ -122,6 +156,80 @@
 				<td>Бусины для афропричёсок<br>1 шт. </td>
 				<td></td>
 				<td>30</td>
+			</tr>
+		</table>
+
+		<table id="directorHairstyling" style="display:none;">
+			<tr>
+				<th>Наименование услуги</th>
+				<th>Время</th>
+				<th>Цена(руб.)</th>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Сушка феном после окраски и других процедур</strong></td>
+			</tr>
+			<tr>
+				<td>Короткие волосы</td>
+				<td>10 мин</td>
+				<td>100</td>
+			</tr>
+			<tr>
+				<td>Удлинённые волосы</td>
+				<td>15 мин</td>
+				<td>200</td>
+			</tr>
+			<tr>
+				<td>Длинные волосы</td>
+				<td>20 мин</td>
+				<td>250</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Укладка феном с препаратами</strong></td>
+			</tr>
+			<tr>
+				<td>Короткие волосы</td>
+				<td>20-30 мин</td>
+				<td>500</td>
+			</tr>
+			<tr>
+				<td>Удлинённые волосы</td>
+				<td>40 мин</td>
+				<td>700</td>
+			</tr>
+			<tr>
+				<td>Длинные волосы</td>
+				<td>1 час</td>
+				<td>800</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Локоны (щипцы, утюги или бигуди)</strong></td>
+			</tr>
+			<tr>
+				<td>Короткие волосы</td>
+				<td>30 мин</td>
+				<td>500</td>
+			</tr>
+			<tr>
+				<td>Удлинённые волосы</td>
+				<td>40 мин</td>
+				<td>700</td>
+			</tr>
+			<tr>
+				<td>Длинные волосы</td>
+				<td>1 час</td>
+				<td>800</td>
 			</tr>
 		</table>
     </div>

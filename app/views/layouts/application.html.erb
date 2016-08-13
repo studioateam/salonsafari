@@ -27,6 +27,9 @@
 	    text-decoration: underline; /* Добавляем подчеркивание */
 	    background: none; /* Цвет фона */
 	   }
+	   strong {
+  		font-weight: 700;
+	   }
 </style>
 <script>
  $(window).load(function(){
@@ -78,6 +81,28 @@
 		} else if (label==1) {
 			document.getElementById("mastersHaircoloring").style.display='none';
 			document.getElementById("directorHaircoloring").style.display='';
+		}
+	}
+	
+	function SelectedHairstyling(a) {
+		var label = a.value;
+		if (label==0) {
+			document.getElementById("mastersHairstyling").style.display='';
+			document.getElementById("directorHairstyling").style.display='none';
+		} else if (label==1) {
+			document.getElementById("mastersHairstyling").style.display='none';
+			document.getElementById("directorHairstyling").style.display='';
+		}
+	}
+
+	function SelectedChemicalperm(a) {
+		var label = a.value;
+		if (label==0) {
+			document.getElementById("mastersChemicalperm").style.display='';
+			document.getElementById("directorChemicalperm").style.display='none';
+		} else if (label==1) {
+			document.getElementById("mastersChemicalperm").style.display='none';
+			document.getElementById("directorChemicalperm").style.display='';
 		}
 	}
 </script>

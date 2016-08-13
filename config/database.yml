@@ -31,8 +31,9 @@ test:
 
 production:
   adapter: mysql2
-  database: setenter_salon51
-  host: mysql7.locum.ru
-  username: setenter_salon51
-  password: RXgqoZA20KQ
   encoding: utf8
+  database: salonsafari_production
+  pool: 5
+  username: root
+  password: 3568877
+  socket: /var/run/mysqld/mysqld.sock

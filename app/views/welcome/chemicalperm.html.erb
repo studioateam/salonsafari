@@ -5,15 +5,22 @@
 		<div class="grid_12">
 			<h2 style="font-size: 2em;">Химическая завивка и долговременная укладка</h2>
 		</div>
+		
+		<select name="chemicalperm_type" aria-required="true" onChange="SelectedChemicalperm(this)">
+			<option value="0" selected="selected">Мастер салона Сафари</option>
+			<option value="1">Директор салона Сафари</option>
+		</select>
+		
+		<br clear="all"<br><br>
       
-		<table>
+		<table id="mastersChemicalperm">
 			<tr>
 				<th>Наименование услуги</th>
 				<th>Время</th>
 				<th>Цена(руб.)</th>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Химическая завивка</td>
+				<td colspan="3" align="center"><strong>Химическая завивка</strong></td>
 			</tr>
 			<tr>
 				<td>Короткие волосы</td>
@@ -31,7 +38,13 @@
 				<td>850-1100</td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Долговременная укладка</td>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Долговременная укладка</strong></td>
 			</tr>
 			<tr>
 				<td>Короткие волосы</td>
@@ -42,6 +55,46 @@
 				<td>Удлинённые волосы</td>
 				<td>2 часа</td>
 				<td>850-1100</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Прикорневой объём Флисинг</strong></td>
+			</tr>
+			<tr>
+				<td>Удлинённые волосы</td>
+				<td>2 часа</td>
+				<td>2300-2500</td>
+			</tr>
+			<tr>
+				<td>Длинные волосы</td>
+				<td>3 часа</td>
+				<td>2500-2900</td>
+			</tr>
+		</table>
+
+		<table id="directorChemicalperm" style="display: none;">
+			<tr>
+				<th>Наименование услуги</th>
+				<th>Время</th>
+				<th>Цена(руб.)</th>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><strong>Прикорневой объём Флисинг</strong></td>
+			</tr>
+			<tr>
+				<td>Удлинённые волосы</td>
+				<td>2 часа</td>
+				<td>2500</td>
+			</tr>
+			<tr>
+				<td>Длинные волосы</td>
+				<td>3 часа</td>
+				<td>3000</td>
 			</tr>
 		</table>
     </div>
