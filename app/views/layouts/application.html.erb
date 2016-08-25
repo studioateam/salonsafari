@@ -1,47 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Сафари</title>
-  <meta charset="utf-8">
-  <meta name="yandex-verification" content="1488db92363d5f09" />
-  <meta name="keywords" content="Салон-парикмахерская, Салон красоты, Сафари, Волжский, Салон Сафари">
-  <link rel="shortcut icon" href="http://www.iconj.com/icon.php?pid=hkzujla2x6" type="image/x-icon" />
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "responsive-tables.js", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "jquery.js", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "jquery-migrate-1.1.1.js", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "jquery.easing.1.3.js", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "script.js", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "superfish.js", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "jquery.equalheights.js", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "jquery.mobilemenu.js", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "tmStickUp.js", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "jquery.shuffle-images.js", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js", "data-turbolinks-track" => true %>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-  <%= csrf_meta_tags %>
-<style type="text/css">
-	   a:hover {
+    <title>Сафари</title>
+    <meta charset="utf-8">
+    <meta name="yandex-verification" content="1488db92363d5f09" />
+    <meta name="keywords" content="Салон-парикмахерская, Салон красоты, Сафари, Волжский, Салон Сафари">
+    <link rel="shortcut icon" href="http://www.iconj.com/icon.php?pid=hkzujla2x6" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "bootstrap.min.css", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", 'data-turbolinks-eval' => false %>
+    <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', 'data-turbolinks-eval' => false %>
+    <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', 'data-turbolinks-eval' => false %>
+    <%= csrf_meta_tags %>
+
+    <!-- Custom Fonts 
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	a:hover {
 	    color: #323045; /* Цвет ссылки при наведении на нее курсора мыши */  
 	    text-decoration: underline; /* Добавляем подчеркивание */
 	    background: none; /* Цвет фона */
-	   }
-	   strong {
-  		font-weight: 700;
-	   }
-</style>
-<script>
- $(window).load(function(){
-  $().UItoTop({ easingType: 'easeOutQuart' });
-  $('#stuck_container').tmStickUp({});  
- }); 
-
- $(document).ready(function(){
-       $(".shuffle-me").shuffleImages({
-         target: ".images > img"
-       });
-    });
+	  }
+    </style>
+    	<script>
 
 	function SelectedHaircut(a) {
 		var label = a.value;
@@ -105,88 +95,116 @@
 			document.getElementById("directorChemicalperm").style.display='';
 		}
 	}
-</script>
-<!--[if lt IE 8]>
- <div style=' clear: both; text-align:center; position: relative;'>
-   <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+	</script>
 
-     <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
-   </a>
-</div>
-<![endif]-->
-<!--[if lt IE 9]>
-
-<script src="js/html5shiv.js"></script>
-<link rel="stylesheet" media="screen" href="css/ie.css">
-<![endif]-->
 </head>
-<body class="page1" id="top">
-<!--==============================
 
-              header
-=================================-->
-<header>
-  <div class="header_top">
-    <div class="container">
-      <div class="row">
-        <div class="grid_12">
-          <h1><img src="<%= image_url 'logo.png' %>"></img></h1>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<%= index_path %>">Главная</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="<%= photos_path %>">Фотогалерея</a>
+                    </li>
+                    <li>
+                        <a href="<%= contacts_path %>">Контакты</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Услуги <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="<%= service_haircut_path %>">Стрижки</a>
+                            </li>
+                            <li>
+                                <a href="<%= service_haircare_path %>">Уход за волосами</a>
+                            </li>
+                            <li>
+                                <a href="<%= service_hairstyling_path %>">Укладка волос</a>
+                            </li>
+                            <li>
+                                <a href="<%= service_chemicalperm_path %>">Хим. завивка и долговременная укладка</a>
+                            </li>
+                            <li>
+                                <a href="<%= service_haircoloring_path %>">Окрашивание волос</a>
+                            </li>
+			    <li>
+                                <a href="<%= service_affro_path %>">Афропрически</a>
+                            </li>
+			    <li>
+                                <a href="<%= service_hairextension_path %>">Наращивание волос</a>
+                            </li>
+			    <li>
+                                <a href="<%= service_manicure_path %>">Ногтевой сервис</a>
+                            </li>
+			    <li>
+                                <a href="<%= service_makeup_path %>">Brow-bar, моделирование взгляда, макияж</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="<%= comments_path %>">Отзывы</a>
+                    </li>
+                    <li>
+                        <a href="<%= vacancies_path %>">Вакансии</a>
+                    </li>
+		    <li><a href="<%= news_index_path %>">Новости</a></li>
+		    <li><a href="<%= sales_path %>">Акции</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-      </div>
-    </div>
-  </div>
-  <section id="stuck_container">
-  <!--==============================
-              Stuck menu
-  =================================-->
-    <div class="container">
-      <div class="row">
-        <div class="grid_12 ">
-          <h1 class="logo">
-          </h1>
-          <div class="navigation " id="menu_body">
-            <nav>
-              <ul class="sf-menu">
-               <li><a href="<%= index_path %>">Главная</a></li>
-               <li><a href="<%= service_path %>">Услуги</a></li>
-               <li><a href="<%= photos_path %>">Фотогалерея</a></li>
-               <li><a href="<%= contacts_path %>">Контакты</a></li>
-	       <li><a href="<%= comments_path  %>">Отзывы</a></li>
-	       <li><a href="<%= vacancies_path %>">Вакансии</a></li>
-	       <% if session[:user_id] %>
-			<li><a href="<%= news_index_path %>">Новости</a></li>
-			<li><a href="<%= sales_path %>">Акции</a></li>
-	       <% end %>
-             </ul>
-            </nav>
-            <div class="clear"></div>
-          </div>       
-         <div class="clear"></div>  
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill"></div>
+                <div class="carousel-caption">
+                    <h2></h2>
+                </div>
+            </div>
         </div>
-     </div> 
-    </div> 
-  </section>
-</header>
+    </header>
 
-<%= yield %>
+    <!-- Page Content -->
+    <div class="container">
 
-<footer id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="grid_12"> 
-        <h2 style="font-size: 2em;">Контакты</h2>
-        <div class="footer_phone">+7 937 714 65 56</div><br>
-		<div class="footer_phone">Время работы: 9:00 - 19:00</div><br>
-        <a href="<%= contacts_path %>" class="footer_mail">Схема проезда</a>
-	<% if session[:user_id] %>
-		<%= button_to 'Выйти', logout_path, method: :delete, class: 'footer_mail' %>
-	<% end %>
-        <div class="sub-copy">Website designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a></div>
-      </div>
+    	<%= yield %>
+	
+	<hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12" align="center">
+		    <% if session[:user_id] %>
+			<%= button_to 'Выйти', logout_path, method: :delete, class: 'btn btn-warning', :style => 'width: 380px; height: 50px'%>
+		    <% end %>
+                    <p>Copyright &copy; Студия красоты "Сафари" 2016</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
+    <!-- /.container -->
 
-  </div>  
-</footer>
-<a href="#" id="toTop" class="fa fa-chevron-up"></a>
 </body>
+
 </html>

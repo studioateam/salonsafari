@@ -1,19 +1,29 @@
-<section id="content" class="gallery">
-  <div class="container" style="background: url(<%= image_url 'box40.png' %>)">
-    <div class="row" align="center" style="margin-bottom: 20px;">
-		
-		<div class="grid_12">
-			<h2 style="font-size: 2em;">Химическая завивка и долговременная укладка</h2>
-		</div>
-		
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">
+			Химическая завивка и долговременная укладка
+		</h1>
+		<ol class="breadcrumb">
+                    <li><a href="<%= index_path %>"><strong>Главная</strong></a>
+                    </li>
+		    <li>Услуги</li>
+                    <li class="active">Химическая завивка...</li>
+                </ol>
+	</div>
+</div>
+<!-- /.row -->
+
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Цены на услуги химической завивки и долговременной укладки</div>
+	<div class="panel-body">
 		<select name="chemicalperm_type" aria-required="true" onChange="SelectedChemicalperm(this)">
 			<option value="0" selected="selected">Мастер салона Сафари</option>
 			<option value="1">Директор салона Сафари</option>
 		</select>
-		
-		<br clear="all"<br><br>
-      
-		<table id="mastersChemicalperm">
+	</div>
+
+	<table class="table table-hover" id="mastersChemicalperm">
 			<tr>
 				<th>Наименование услуги</th>
 				<th>Время</th>
@@ -77,7 +87,7 @@
 			</tr>
 		</table>
 
-		<table id="directorChemicalperm" style="display: none;">
+		<table class="table table-hover" id="directorChemicalperm" style="display: none;">
 			<tr>
 				<th>Наименование услуги</th>
 				<th>Время</th>
@@ -97,6 +107,4 @@
 				<td>3000</td>
 			</tr>
 		</table>
-    </div>
-  </div>
-</section>
+</div>

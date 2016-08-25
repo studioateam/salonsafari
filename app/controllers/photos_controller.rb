@@ -243,6 +243,8 @@ class PhotosController < ApplicationController
 	photo.image_paths = paths[0...-1]
 
 	photo.save
+
+	redirect_to photos_url
 	
   end
 

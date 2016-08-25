@@ -6,7 +6,7 @@ class VacanciesController < ApplicationController
   # GET /vacancies.json
   def index
     @users = User.all
-    @vacancies = Vacancy.all
+    @vacancies = Vacancy.order('created_at desc')
   end
 
   # GET /vacancies/1

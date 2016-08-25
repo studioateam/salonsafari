@@ -1,20 +1,26 @@
-<% if session[:user_id] %>
-	<section id="content">
-	  <div class="container" style="background: url(<%= image_url 'box40.png' %>)">
-	    <div class="row" style="margin-left: 20px; margin-bottom: 20px;">
-		<h3 style="font-size: 2em;" align="center">Вакансии</h3>
-		<table>
-		  <thead>
-		    <tr>
-		      <th>Заголовок</th>
-		      <th>Описание</th>
-		      <th></th>
-		      <th></th>
-		    </tr>
-		  </thead>
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">
+			Вакансии
+		</h1>
+		<ol class="breadcrumb">
+                    <li><a href="<%= index_path %>"><strong>Главная</strong></a>
+                    </li>
+                    <li class="active">Вакансии</li>
+                </ol>
+	</div>
+</div>
+<!-- /.row -->
 
-		  <tbody>
-		    <% @vacancies.each do |vacancy| %>
+<% if session[:user_id] %>
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Доступные вакансии</div>
+	<div class="panel-body">
+			<a href="<%= new_vacancy_path %>" class="btn btn-warning">Добавить вакансию</a>
+	</div>
+		<table class="table table-hover">
+		  <% @vacancies.each do |vacancy| %>
 		      <tr>
 			<td><%= vacancy.title %></td>
 			<td><%= vacancy.description %></td>
@@ -22,35 +28,20 @@
 			<td><%= link_to 'Удалить', vacancy, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить эту запись?' } %></td>
 		      </tr>
 		    <% end %>
-		  </tbody>
 		</table>
-
-		<br>
-
-		<a href="<%= new_vacancy_path %>" class="btn">Добавить вакансию</a>
-	    </div>
-	  </div>
-	</section>
+</div>
 <% else %>
-	<section id="content">
-	  <div class="container" style="background: url(<%= image_url 'box40.png' %>)">
-	    <div class="row" style="margin-left: 20px; margin-bottom: 20px;">
-	      <div class="grid_7">
-		<h3 style="font-size: 2em;" align="center">Вакансии</h3>
-		<% @vacancies.each do |vacancy| %>
-			<time class="time-1"><%= vacancy.title %></time><br clear="all"><p class="offset__2" style="font-size: 1.4em;"><%= vacancy.description %></p>
-			<br clear="all">
-		<% end %>
-		<% if @vacancies.count == 0 %>
-			<time class="time-1">К сожалению, новых вакансий нет.</time><br clear="all"><p class="offset__2" style="font-size: 1.4em;">Но вы можете позвонить нам по телефону и узнать подробнее, быть может именно Вы нас заинтересуете ;)</p>
-		<% end %>
-	      </div>
-	      <div class="grid_4">
-		<img src="<%= image_url 'vacancy.png' %>" style="margin-top: 100px;"/>
-	      </div>
-	      </blockquote>
-	      </div>
-	    </div>
-	  </div>
-	</section>
+	<% @vacancies.each do |vacancy| %>
+			<div class="alert alert-warning" role="alert">
+				<strong><%= vacancy.title %></strong>
+				<br>
+				<%= vacancy.description %>			
+			</div>
+	<% end %>
+<% end %>
+<% if @vacancies.count == 0 %>
+			<div class="alert alert-warning" role="alert">
+				К сожалению, новых вакансий нет. Но вы можете позвонить нам по телефону и узнать подробнее,
+				быть может именно Вы нас заинтересуете ;)
+			</div>
 <% end %>

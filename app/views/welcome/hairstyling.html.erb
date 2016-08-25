@@ -1,26 +1,36 @@
-<section id="content" class="gallery">
-  <div class="container" style="background: url(<%= image_url 'box40.png' %>)">
-    <div class="row" align="center" style="margin-bottom: 20px;">
-		
-		<div class="grid_12">
-			<h2 style="font-size: 2em;">Укладка волос</h2>
-		</div>
-		
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">
+			Укладка волос
+		</h1>
+		<ol class="breadcrumb">
+                    <li><a href="<%= index_path %>"><strong>Главная</strong></a>
+                    </li>
+		    <li>Услуги</li>
+                    <li class="active">Укладка волос</li>
+                </ol>
+	</div>
+</div>
+<!-- /.row -->
+
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Цены на услуги укладки волос</div>
+	<div class="panel-body">
 		<select name="style_type" aria-required="true" onChange="SelectedHairstyling(this)">
 			<option value="0" selected="selected">Мастер салона Сафари</option>
 			<option value="1">Директор салона Сафари</option>
 		</select>
-		
-		<br clear="all"<br><br>
-      
-		<table id="mastersHairstyling">
+	</div>
+
+	<table class="table table-hover" id="mastersHairstyling">
 			<tr>
 				<th>Наименование услуги</th>
 				<th>Время</th>
 				<th>Цена(руб.)</th>
 			</tr>
 			<tr>
-				<td colspan="3" align="center"><strong>Сушка феном после окраски и других процедур</strong></td>
+				<td colspan="3" align="center"><strong>Сушка феном после окрашивания и других процедур</strong></td>
 			</tr>
 			<tr>
 				<td>Короткие волосы</td>
@@ -105,7 +115,7 @@
 				<td>1000</td>
 			</tr>
 			<tr>
-				<td>Прическа усложненная<br>(прическа невесты)</td>
+				<td>Прическа усложненная(прическа невесты)</td>
 				<td>2 часа</td>
 				<td>1500</td>
 			</tr>
@@ -134,7 +144,7 @@
 				<td>450</td>
 			</tr>
 			<tr>
-				<td>Прическа с вплетением<br>искусственных материалов</td>
+				<td>Прическа с вплетениемискусственных материалов</td>
 				<td>1 час</td>
 				<td>500-850</td>
 			</tr>
@@ -153,20 +163,20 @@
 				<td>220-280</td>
 			</tr>
 			<tr>
-				<td>Бусины для афропричёсок<br>1 шт. </td>
+				<td>Бусины для афропричёсок1 шт. </td>
 				<td></td>
 				<td>30</td>
 			</tr>
 		</table>
 
-		<table id="directorHairstyling" style="display:none;">
+		<table class="table table-hover" id="directorHairstyling" style="display:none;">
 			<tr>
 				<th>Наименование услуги</th>
 				<th>Время</th>
 				<th>Цена(руб.)</th>
 			</tr>
 			<tr>
-				<td colspan="3" align="center"><strong>Сушка феном после окраски и других процедур</strong></td>
+				<td colspan="3" align="center"><strong>Сушка феном после окрашивания и других процедур</strong></td>
 			</tr>
 			<tr>
 				<td>Короткие волосы</td>
@@ -232,6 +242,5 @@
 				<td>800</td>
 			</tr>
 		</table>
-    </div>
-  </div>
-</section>
+	
+</div>

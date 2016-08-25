@@ -1,9 +1,28 @@
-<section id="content">
-  <div class="container" style="background: url(<%= image_url 'box40.png' %>)">
-    <div class="row"  style="margin-left: 20px; margin-bottom: 20px;">
-	<% if session[:user_id] %>
-		<h3 style="font-size: 2em;" align="center">Отзывы</h3>
-		<table>
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">
+			Отзывы
+		</h1>
+		<ol class="breadcrumb">
+                    <li><a href="<%= index_path %>"><strong>Главная</strong></a>
+                    </li>
+                    <li class="active">Отзывы</li>
+                </ol>
+	</div>
+</div>
+<!-- /.row -->
+
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Оставьте нам свой отзыв:</div>
+	<div class="panel-body">
+	<p><a href="<%= new_comment_path %>" class="btn btn-warning"> Оставить отзыв</a></p>
+	</div>
+
+	<% if @comments.count == 0 %>
+			<div class="alert alert-warning" role="alert">К сожалению, нам пока никто не написал отзыв. Вы можете стать первым ;)</div>
+	<% elsif session[:user_id] %>
+		<table class="table table-hover">
 		  <thead>
 		    <tr>
 		      <th>Имя</th>
@@ -28,24 +47,15 @@
 		  </tbody>
 		</table>
 	<% else %>
-	      <div class="grid_7">
-		<h3 style="font-size: 2em;" align="center">Отзывы</h3>
-		<img src="<%= image_url 'comment.png' %>" alt="" class="img_inner fleft noresize">
-		<% @comments.each do |comment| %>
-			<time class="time-1"><%= comment.name %></time><br clear="all"><p class="offset__2" style="font-size: 1.5em;"><%= comment.message %></p>
-			<br clear="all">
-
-		<% end %>
-		<% if @comments.count == 0 %>
-			<time class="time-1">К сожалению, нам пока никто не написал отзыв. Вы можете стать первым ;)</time><br clear="all">
-		<% end %>
-		<%= will_paginate @comments %>
-		<a href="<%= new_comment_path %>" class="btn"> Оставить отзыв</a>
-	      </div>
-	      <div class="grid_4" style="margin-top: 40px;"><img src="<%= image_url 'comments.png' %>" alt="" class="img_inner fleft noresize"></div>
-	      </blockquote>
-	     </div>
+		<table class="table table-striped">
+		    <% @comments.each do |comment| %>
+		      <tr>
+			<td><%= comment.created_at %></td>
+			<td><%= comment.name %></td>
+			<td><%= comment.message %></td>
+		      </tr>
+		    <% end %>
+		</table>
+		<div align="center"><%= will_paginate @comments %></div>
 	<% end %>
-    </div>
-  </div>
-</section>
+</div>

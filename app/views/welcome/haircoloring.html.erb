@@ -1,19 +1,29 @@
-<section id="content" class="gallery">
-  <div class="container" style="background: url(<%= image_url 'box40.png' %>)">
-    <div class="row" align="center" style="margin-bottom: 20px;">
-		
-		<div class="grid_12">
-			<h2 style="font-size: 2em;">Окрашивание волос</h2>
-		</div>
-		
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">
+			Окрашивание волос
+		</h1>
+		<ol class="breadcrumb">
+                    <li><a href="<%= index_path %>"><strong>Главная</strong></a>
+                    </li>
+		    <li>Услуги</li>
+                    <li class="active">Окрашивание волос</li>
+                </ol>
+	</div>
+</div>
+<!-- /.row -->
+
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Цены на услуги окрашивания волос</div>
+	<div class="panel-body">
 		<select name="cut_type" name="Dest" aria-required="true" onChange="SelectedHaircoloring(this)">
 			<option value="0" selected="selected">Мастер салона Сафари</option>
 			<option value="1">Директор салона Сафари</option>
 		</select>
-		
-		<br clear="all"<br><br>
-      
-		<table id="mastersHaircoloring">
+	</div>
+
+	<table class="table table-hover" id="mastersHaircoloring">
 			<tr>
 				<th>Наименование услуги</th>
 				<th>Время</th>
@@ -132,7 +142,7 @@
 				<td colspan="3" align="center"><strong>Колорирование, экспертное окрашивание, Dim-out</strong></td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Колорирование, экспертное <br> окрашивание, Dim-out<br>(до 25 см, 50-100 г)</td>
+				<td colspan="3" align="center">Колорирование, экспертное  окрашивание, Dim-out(до 25 см, 50-100 г)</td>
 			</tr>
 			<tr>
 				<td>«Igora»</td>
@@ -145,7 +155,7 @@
 				<td>1300-1700</td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Колорирование, экспертное <br> окрашивание, Dim-out<br>(25-40 см, 60-100 г)</td>
+				<td colspan="3" align="center">Колорирование, экспертное  окрашивание, Dim-out(25-40 см, 60-100 г)</td>
 			</tr>
 			<tr>
 				<td>«Igora»</td>
@@ -158,7 +168,7 @@
 				<td>1850-2600</td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Колорирование, экспертное <br> окрашивание, Dim-out<br>(свыше 40 см, 80-150 г)</td>
+				<td colspan="3" align="center">Колорирование, экспертное  окрашивание, Dim-out(свыше 40 см, 80-150 г)</td>
 			</tr>
 			<tr>
 				<td>«Igora»</td>
@@ -289,7 +299,7 @@
 				<td colspan="3" align="center"></td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center"><strong>Депигментирование (деколорант, <br>кислотная смывка краски с волос)</strong></td>
+				<td colspan="3" align="center"><strong>Депигментирование (деколорант, кислотная смывка краски с волос)</strong></td>
 			</tr>
 			<tr>
 				<td>Короткие волосы</td>
@@ -308,7 +318,7 @@
 			</tr>
 		</table>
 		
-		<table id="directorHaircoloring" style="display: none">
+		<table class="table table-hover" id="directorHaircoloring" style="display: none">
 			<tr>
 				<th>Наименование услуги</th>
 				<th>Время</th>
@@ -427,7 +437,7 @@
 				<td colspan="3" align="center"><strong>Колорирование, экспертное окрашивание, Dim-out</strong></td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Колорирование, экспертное <br> окрашивание, Dim-out<br>(до 25 см, 50-100 г)</td>
+				<td colspan="3" align="center">Колорирование, экспертное  окрашивание, Dim-out(до 25 см, 50-100 г)</td>
 			</tr>
 			<tr>
 				<td>«Igora»</td>
@@ -440,7 +450,7 @@
 				<td>2400</td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Колорирование, экспертное <br> окрашивание, Dim-out<br>(25-40 см, 60-100 г)</td>
+				<td colspan="3" align="center">Колорирование, экспертное  окрашивание, Dim-out(25-40 см, 60-100 г)</td>
 			</tr>
 			<tr>
 				<td>«Igora»</td>
@@ -453,7 +463,7 @@
 				<td>2700</td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center">Колорирование, экспертное <br> окрашивание, Dim-out<br>(свыше 40 см, 80-150 г)</td>
+				<td colspan="3" align="center">Колорирование, экспертное  окрашивание, Dim-out(свыше 40 см, 80-150 г)</td>
 			</tr>
 			<tr>
 				<td>«Igora»</td>
@@ -584,7 +594,7 @@
 				<td colspan="3" align="center"></td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center"><strong>Депигментирование (деколорант, <br>кислотная смывка краски с волос)</strong></td>
+				<td colspan="3" align="center"><strong>Депигментирование (деколорант, кислотная смывка краски с волос)</strong></td>
 			</tr>
 			<tr>
 				<td>Короткие волосы</td>
@@ -602,6 +612,5 @@
 				<td>1000</td>
 			</tr>
 		</table>
-    </div>
-  </div>
-</section>
+
+</div>

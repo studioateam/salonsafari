@@ -1,92 +1,112 @@
-<section id="content">
-  <div class="container">
-    <div class="row">
-      <div class="grid_8">
-        <h3 style="font-size: 2em;">О нас</h3>
-        <img src="<%= image_url 'safari.jpg' %>" alt="" class="img_inner fleft noresize" height="200" width="180">
-        <div class="extra_wrapper">
-			<p class="offset__1">
-				<b style="font-size: 1.5em;">Студия красоты "САФАРИ"<br>С заботой о Вашей красоте!
-				<br />
-				тел.: 8 937 714 6556</b>
-			</p>
-		</div>
-        <div class="clear"></div>
-		<br />
-				<div style="font-size: 1.3em;">Мы - это стрижки, не требующие укладки;<br />
-				- салонное окрашивание волос по принципу "не навреди";<br />
-				- прикорневой объем <strong>"Флисинг";</strong><br />
-				- консультации по цветотипу;<br />
-				- кератиновое выпрямление от <strong>Greymy;</strong><br />
-				- моделирование, окрашивание, биотатуаж бровей;<br />
-				- маникюр, педикюр;<br />
-				- моделирование ногтей;<br />
-				- богатый выбор <strong>CND Shellac;</strong><br />
-				- домашний уход и инструменты.</div>
-        <br>
-        <!--<a href="#" class="btn">Читать больше</a>--> 
-      </div>
-      <div class="grid_4">
-        <h3 style="font-size: 2em;">Мы в соц. сетях</h3>
-        <ul class="socials">
-          <li>
-            <div class="fa fa-vk"><img src="<%= image_url 'vk.png' %>" height="15" width="30" style="margin-top: 15px;" /></div>
-            <a href="http://vk.com/salon_safari" target="_blank">Присоединись к нам ВКонтакте</a>
-          </li>
-          <li>
-            <div class="fa fa-instagram"><img src="<%= image_url 'instagram.png' %>" height="25" width="25" style="margin-top: 10px;" /></div>
-            <a href="https://www.instagram.com/salonsafari/" target="_blank">Смотри нас в Instagram</a>
-          </li>
-          <li>
-            <div class="fa fa-ok"><img src="<%= image_url 'ok.png' %>" height="30" width="30" style="margin-top: 5px;" /></div>
-            <a href="http://ok.ru/group/50839877320795" target="_blank">Найди нас в Одноклассниках</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="sep-1"></div>
-  <div class="container">
-    <div class="row">
-      <div class="grid_7">
-        <h3 style="font-size: 2em;">Новости</h3>
-	<% @first_news.each do |news| %>
-		<time class="time-1"><%= news.title %></time><br clear="all"><p class="offset__2"><%= news.description %></p>
-		<img src="<%= image_url news.image_path %>" alt="" class="img_inner fleft" height="200" width="180"><br>
-		<br clear="all">
-	<% end %>
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Добро пожаловать!
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+	<div class="well" style="background-color: #ffffff;">
+            <div class="row">
+                <div class="col-md-8">
+                    <p><strong style="font-size: 15px;">Студия красоты "САФАРИ". С заботой о Вашей красоте! тел.: 8 937 714 65 56</strong></p><br>
+		<p style="font-size: 14px;">Мы - это стрижки, не требующие укладки;
+- салонное окрашивание волос по принципу "не навреди";
+- прикорневой объем "Флисинг";
+- консультации по цветотипу;
+- кератиновое выпрямление от Greymy;
+- моделирование, окрашивание, биотатуаж бровей;
+- маникюр, педикюр;
+- моделирование ногтей;
+- богатый выбор CND Shellac;
+- домашний уход и инструменты.</p>
+                </div>
+                <div class="col-md-4" align="center">
+                    <img src="<%= image_url 'safari.jpg' %>" alt="" class="img_inner fleft noresize" height="200" width="250">
+                </div>
+            </div>
+        </div>
+	
+	<div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Новости
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
 	<% if !@is_empty_news %>
-		<a href="http://vk.com/salon_safari" class="btn" target="_blank">Читать больше</a>
-	<% elsif %>
-		<time class="time-1">Новостей пока нет!</time><br clear="all"><p class="offset__2">Но не расстраивайтесь, скоро появятся :) </p>
-        <% end %>
-      </div>
-      <div class="grid_4 preffix_1">
-        <h3 style="font-size: 2em;">Акции</h3>
-        <blockquote class="bq_1">
-	  <% if !@is_empty_sales %>
-		<img src="<%= image_url 'sale.png' %>" alt="" class="img_inner fleft">
-          <% end %>
-	  <% @first_sales.each do |sale| %>
-		  <div class="extra_wrapper">
-		    <div class="bq_title"><%= sale.title %></div>
-		  </div>
-		  <div class="clear"></div>
-		  <%= sale.description %>
-		  <br>
-	  <% end %>
-	  <% if !@is_empty_sales %>
-		<a href="http://vk.com/salon_safari" class="btn">Ещё акции</a>
-	  <% elsif %>
-		<div class="extra_wrapper">
-		    <div class="bq_title">Акций нет!</div>
-		  </div>
-		  <div class="clear"></div>
-		  Но вы можете уточнить наличие специальных предложений по телефону.
-		  <br>
-          <% end %>
-          </blockquote>
-      </div>
-    </div>
-  </div>
-</section>
+	<div class="well" style="background-color: #fcf8e3;">
+            <div class="row">
+		<% @first_news.each do |news| %>
+		        <div class="media">
+			  <div class="media-left">
+			    <a href="#">
+			      <img class="media-object" src="<%= image_url news.image_path %>" alt="" width="200">
+			    </a>
+			  </div>
+			  <div class="media-body">
+			    <h4 class="media-heading"><%= news.title %></h4>
+			    <%= news.description %>
+			  </div>
+			</div>
+		<% end %>
+            </div>
+	    <div class="row" align="center">
+	    	<a href="<%= news_index_path %>" class="btn btn-warning">Читать больше новостей ></a>
+	    </div>
+        </div>
+	<% else %>
+	    <div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-warning">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Новостей пока нет!</h3>
+			  </div>
+			  <div class="panel-body">
+			   	Но не расстраивайтесь, скоро появятся :)
+			  </div>
+			</div>
+		    </div>
+	    </div>
+	<% end %>
+
+        <!-- Features Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Акции</h2>
+            </div>
+	    <% @first_sales.each do |sale| %>
+		<div class="col-md-12">
+			<div class="panel panel-warning">
+			  <div class="panel-heading">
+			    <h3 class="panel-title"><%= sale.title %></h3>
+			  </div>
+			  <div class="panel-body">
+			   	<%= sale.description %>
+			  </div>
+			</div>
+		    </div>
+	    <% end %>
+	    <% if !@is_empty_sales %>
+		    <div class="row" align="center">
+		    	<a href="<%= sales_path %>" class="btn btn-warning">Больше акций ></a>
+		    </div>
+	    <% end %>
+	    <% if @is_empty_sales %>
+		    <div class="col-md-12">
+			<div class="panel panel-warning">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Акций нет!</h3>
+			  </div>
+			  <div class="panel-body">
+			   	Но вы можете уточнить наличие специальных предложений по телефону - 8 937 714 65 56
+			  </div>
+			</div>
+		    </div>
+	   <% end %>
+        </div>
+        <!-- /.row -->

@@ -1,60 +1,83 @@
 <% if session[:user_id] %>
-	<section id="content">
-	  <div class="container" style="background: url(<%= image_url 'box40.png' %>)">
-	    <div class="row" style="margin-left: 20px; margin-bottom: 20px;">
-		<h3 style="font-size: 2em;" align="center">Новости</h3>
-		<table>
-		  <thead>
-		    <tr>
-		      <th>Заголовок</th>
-		      <th>Описание</th>
-		      <th></th>
-		    </tr>
-		  </thead>
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">
+				Новости
+			</h1>
+			<ol class="breadcrumb">
+		            <li><a href="<%= index_path %>"><strong>Главная</strong></a>
+		            </li>
+		            <li class="active">Новости</li>
+		        </ol>
+		</div>
+	</div>
+	<!-- /.row -->
 
-		  <tbody>
-		    <% @news.each do |news| %>
-		      <tr>
-			<td><%= news.title %></td>
-			<td><%= news.description %></td>
-			<td><%= link_to 'Удалить', news, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить эту запись?' } %></td>
-		      </tr>
-		    <% end %>
-		  </tbody>
+	<div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading">Текущие новости</div>
+		<div class="panel-body">
+			<a href="<%= new_news_path %>" class="btn btn-warning">Добавить новость</a>
+		</div>
+
+		<table class="table table-hover">
+			<% @news.each do |news| %>
+			      <tr>
+				<td><%= news.title %></td>
+				<td><%= news.description %></td>
+				<td><%= link_to 'Удалить', news, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить эту запись?' } %></td>
+			      </tr>
+			<% end %>
 		</table>
+		<div align="center"><%= will_paginate @comments %></div>
+	</div>
+<% else %>	
+		<div class="row">
+		    <div class="col-lg-12">
+		        <h1 class="page-header">Новости
+		        </h1>
+		        <ol class="breadcrumb">
+		            <li><a href="<%= index_path %>">Главная</a>
+		            </li>
+		            <li class="active">Новости</li>
+		        </ol>
+		    </div>
+		</div>
+		<!-- /.row -->
 
-		<br>
+		<% @news.each do |news| %>
+		<div class="alert alert-warning" id="<%= news.id %>" role="alert">Запись добавлена <%= news.created_at %></div>
+		<!-- Blog Post Row -->
+		<div class="row">
+		    <div class="col-md-5">
+		        <a>
+		            <img class="img-responsive img-hover" src="<%= image_url news.image_path %>" alt="">
+		        </a>
+		    </div>
+		    <div class="col-md-6">
+		        <h3>
+		            <a><%= news.title %></a>
+		        </h3>
+		        <p>by <a>Elena Nikitina</a>
+		        </p>
+		        <p><%= news.description %></p>
+		        <a id="<%= news.id %>" onclick="show_hide_ref(this.id)" class="btn btn-warning" style="margin-bottom: 10px;">Получить ссылку</a>
+			<br>
+			<input type="text" class="form-control" id="input<%= news.id %>" style="display: none" value="<%= request.original_url %>#<%= news.id %>">
+		    </div>
+		</div>
+		<!-- /.row -->
 
-		<a href="<%= new_news_path %>" class="btn">Добавить новость</a>
-	    </div>
-	  </div>
-	</section>
-<% else %>
-	<section id="content">
-	  <% i = 0 %>
-	  <% @news.each do |news| %>
-	  <div class="container" style="background: url(<%= image_url 'box40.png' %>)">
-	    <% if i > 0 %>
-	    	<div class="sep-1"></div>
-	    <% end %>
-	    <div class="row" style="margin-bottom: 20px;">
-	      <div class="grid_7">
-		<h3 style="font-size: 2em;" align="center"></h3>
-			<time class="time-1"><%= news.title %></time><br clear="all"><p class="offset__2"><%= news.description %></p>
-			<br clear="all">
-		<% if @news.count == 0 %>
-			<time class="time-1">Новостей пока нет!</time><br clear="all"><p class="offset__2">Но не расстраивайтесь, скоро появятся :) </p>
-		<% end %>
-	      </div>
-	      <div class="grid_4">
-		<h3 style="font-size: 2em;"></h3>
-		<blockquote class="bq_1">
-			<img src="<%= image_url news.image_path %>" alt="" class="img_inner fleft" height="200" width="180"><br>	 
-		  </blockquote>
-	      </div>
-	    </div>
-	  </div>
-	  <% i += 1 %>
-	  <% end %>
-	</section>
+		<hr>
+	<% end %>
+	<div align="center"><%= will_paginate @comments %></div>
 <% end %>
+<% if @news.count == 0 and !session[:user_id] %>
+	<div class="alert alert-warning" role="alert">Новостей пока нет! Но не расстраивайтесь, скоро появятся :)</div>
+<% end %>
+
+<script>
+function show_hide_ref(id){
+	$('#input'+id).toggle();
+}
+</script>

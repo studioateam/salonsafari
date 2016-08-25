@@ -1,18 +1,19 @@
 <% photos_in_folder = @photo.image_paths.split(';') %>
 
-<section id="content" class="gallery">
-  <div class="container">
-    <div class="row" align="center">
-      <div class="grid_12">
-        <h3 style="font-size: 2em;" align="center"><%= @photo.name %></h3>
-      </div>
-      <% photos_in_folder.each do |photo| %>
-	      <div class="grid_4">
-			<div class="box">
-			  <img src="<%= image_url(@photo.name + '/' +  photo) %>" alt=""><span></span>
-		  	</div>
-	      </div>
-     <% end %>
-    </div>
-  </div>
-</section>
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">
+			<%= @photo.name %>
+		</h1>
+	</div>
+</div>
+
+<div class="row">
+	<% photos_in_folder.each do |photo| %>
+	<div class="col-xs-6 col-md-3">
+		<a class="thumbnail">
+			<img src="<%= image_url(@photo.name + '/' +  photo) %>" alt="...">
+		</a>
+	</div>
+	<% end %>
+</div>

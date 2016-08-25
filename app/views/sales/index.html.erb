@@ -1,20 +1,27 @@
-<% if session[:user_id] %>
-	<section id="content">
-	  <div class="container" style="background: url(<%= image_url 'box40.png' %>)">
-	    <div class="row" style="margin-left: 20px; margin-bottom: 20px;">
-		<h3 style="font-size: 2em;" align="center">Акции</h3>
-		<table>
-		  <thead>
-		    <tr>
-		      <th>Заголовок</th>
-		      <th>Описание</th>
-		      <th></th>
-		      <th></th>
-		    </tr>
-		  </thead>
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">
+			Акции
+		</h1>
+		<ol class="breadcrumb">
+                    <li><a href="<%= index_path %>"><strong>Главная</strong></a>
+                    </li>
+                    <li class="active">Акции</li>
+                </ol>
+	</div>
+</div>
+<!-- /.row -->
 
-		  <tbody>
-		    <% @sales.each do |sale| %>
+<% if session[:user_id] %>
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Текущие акции</div>
+	<div class="panel-body">
+		
+			<a href="<%= new_sale_path %>" class="btn btn-warning">Добавить акцию</a>
+	</div>
+		<table class="table table-hover">
+		  <% @sales.each do |sale| %>
 		      <tr>
 			<td><%= sale.title %></td>
 			<td><%= sale.description %></td>
@@ -22,13 +29,22 @@
 			<td><%= link_to 'Удалить', sale, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить эту запись?' } %></td>
 		      </tr>
 		    <% end %>
-		  </tbody>
 		</table>
-
-		<br>
-
-		<a href="<%= new_sale_path %>" class="btn">Добавить акцию</a>
-	    </div>
-	  </div>
-	</section>
+</div>
+<% else %>
+	<% @sales.each do |sale| %>
+			<div class="panel panel-warning">
+			  <div class="panel-heading">
+			    <h3 class="panel-title"><%= sale.title %></h3>
+			  </div>
+			  <div class="panel-body">
+			   	<%= sale.description %>
+			  </div>
+			</div>
+	<% end %>
+<% end %>
+<% if @sales.count == 0 %>
+			<div class="alert alert-warning" role="alert">
+				Акций нет! Но вы можете уточнить наличие специальных предложений по телефону - 8 937 714 65 56
+			</div>
 <% end %>
